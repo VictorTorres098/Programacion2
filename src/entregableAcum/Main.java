@@ -9,6 +9,7 @@ public class Main {
 		int [][] matCuadrada = {{1,2,3},
 								{4,5,6},
 								{3,8,9}};
+		//test
 		//int mat [][] = new int [0][0];
 		
 		//System.out.println(Acumuladores.exiteColumnaMultiplo(matriz, 2, 0));
