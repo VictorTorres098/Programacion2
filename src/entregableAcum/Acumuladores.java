@@ -11,7 +11,7 @@ public class Acumuladores {
 	
 	
 	
-	//tomar el primer valor de la columna multiplicarla y buscar el resultado de algun elemento de la columna dada multiplicada x2 en los elementos de otras columnas 
+//  tomar el primer valor de la columna multiplicarla y buscar el resultado de algun elemento de la columna dada multiplicada x2 en los elementos de otras columnas 
 	
 	public static boolean exiteColumnaMultiplo(int [][] mat, int k, int c) {
 		if( k<=0 && c > mat[0].length && mat.length==0) {
@@ -30,6 +30,23 @@ public class Acumuladores {
 			ret = ret && mat[j][i] == mat[j][c]*k;
 		}
 		return ret;
+	}
+//	a) Implementar una funcion filaColumnaIgual(int[][]mat)que compruebe si hay alguna fila cuyos
+//	elementos son iguales a los elementos de una columna en el mismo orden, la matriz es cuadrada.
+	
+	public static boolean filaColumnaIgual (int [][] mat) {
+		boolean algunaIgualdad = false;
+		for(int i = 0; i < mat.length; i++) {
+			algunaIgualdad = algunaIgualdad || ElementoCoincide(mat, i);
+		}
+		return algunaIgualdad;
+	}
+	public static boolean ElementoCoincide (int [][] mat, int indice) {
+		boolean elementoIgual = true;
+		for(int i = 0; i < mat.length; i++) {
+			elementoIgual = elementoIgual && mat[i][indice]==mat[indice][i];
+		}
+		return elementoIgual;
 	}
 
 }
