@@ -24,12 +24,20 @@ public class Conjunto<T> {
 	public boolean pertenece(T elemento) {
 		return elementos.contains(elemento);
 	}
-	public T MostrarConjunto () {
-		for(int i=0; i<elementos.size(); i++) {
-			return elementos.get(i);
-		}
-		return null;
+	public int tamano() {
+		return elementos.size();
 	}
+	
+	public void union (Conjunto newConjunto) {
+		T elemento;
+		for(int i=0; i< newConjunto.tamano(); i++) {
+			//elemento = newConjunto.dameUno();
+				//this.agregar(elemento);   //ya que agregar por definicion no perminte elementos repetidos por lo tanto no es necesarion comprobar que el elemento esta repetido
+		}
+		
+	}
+	//union con crear un 3 Conjunto destrutiva
+	//interseccion que debe estar en ambos conjuntos
 }
 
 /**
