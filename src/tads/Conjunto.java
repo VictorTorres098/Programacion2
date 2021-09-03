@@ -30,6 +30,12 @@ public class Conjunto<T> {
 		}
 		return null;
 	}
+	//	public T dameUnElemento() {
+//		//T aux = null;
+//		//ir iterando los elemento y retornarlos una vez que doy el elemento lo guardo en la lista auxiliar
+//		//o tambien podriamos de por si agregarlos a la lista auxiliar y iteramos la lista auxiliar eliminandoslos!!! como es auxiliar no importa eliminarlos del conjunto 
+//		
+//	}
 }
 //test
 
