@@ -8,8 +8,8 @@ public class Main {
 		elementos.agregar(12);
 		elementos.agregar(13);
 		elementos.agregar(233);
-		System.out.println(elementos.MostrarConjunto());
-		System.out.println(elementos.MostrarConjunto());
+		//System.out.println(elementos.MostrarConjunto());
+		//System.out.println(elementos.MostrarConjunto());
 
 	}
 
