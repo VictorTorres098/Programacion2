@@ -30,6 +30,18 @@ public class Sistema {
 	//Falta implementar mostrarPorGenero, mostarPorActor
 	//SSSasd
 	//test
+		//Falta implementar mostrarPorGenero, mostarPorActor
+	//por complicaciones deberiamos guardar los codigos de las peliculas en un conjunto para asi facilitar los metodos, mas facil la iteracion de las peliculas y facilita conseguir su informacion
+	//para implementar el siguinte codigo falta implementar funciones de Conjunto!!!!
+	public String getPeliculasPorGenero(String genero) {
+//		for(Integer c : codigos) {
+//			
+//		}
+		return "falta implementar";
+	}
+	
+	
+	
 	
 
 }
