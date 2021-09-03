@@ -37,6 +37,7 @@ public class Conjunto<T> {
 		
 	}
 	//union con crear un 3 Conjunto destrutiva
+	//idea miesntras sea distinto de null
 	//interseccion que debe estar en ambos conjuntos
 }
 
