@@ -28,7 +28,8 @@ public class Sistema {
 		return catalogoPeliculas.get(codigo).getReproducciones();
 	}
 	//Falta implementar mostrarPorGenero, mostarPorActor
-	
+	//SSSasd
+	//test
 	
 
 }
