@@ -36,6 +36,38 @@ public class Conjunto<T> {
 		}
 		
 	}
+		public T dameUnElemento() {
+		for(int i = 0; i< elementos.size(); i++) {
+			if(!(auxiliar.contains(elementos.get(i)))) {
+				aux = elementos.get(i);
+			}
+			
+		}
+		auxiliar.add(aux);
+		return aux;
+		
+	}
+	public String mostrarElementos() {
+		String cadena = "";
+		for(int i = 0; i < elementos.size(); i++) {
+			cadena = cadena+" "+elementos.get(i);
+		}
+		return cadena;
+	}
+	public String mostrarAuxiliar() {
+		String cadenaAuxiliar = "";
+		for(int j = 0; j < auxiliar.size(); j++) {
+			cadenaAuxiliar = cadenaAuxiliar+" "+auxiliar.get(j); 
+		}
+		return cadenaAuxiliar;
+	}
+	public boolean estaEnAuxiliar(Integer valor) {
+		boolean enAuxiliar = false;
+		for(int i = 0; i<auxiliar.size(); i++) {
+			enAuxiliar = enAuxiliar || valor == auxiliar.get(i);
+		}
+		return enAuxiliar;
+	}
 	//union con crear un 3 Conjunto destrutiva
 	//idea miesntras sea distinto de null
 	//interseccion que debe estar en ambos conjuntos
