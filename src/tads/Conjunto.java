@@ -6,10 +6,12 @@ public class Conjunto<T> {
 	
 	private ArrayList<T> elementos;
 	private ArrayList<T> auxiliar;
+	private int actual;
 	
 	public Conjunto() {
-		elementos = new ArrayList<T>();
-		auxiliar = new ArrayList<T>();
+		this.elementos = new ArrayList<T>();
+		this.auxiliar = new ArrayList<T>();
+		actual = 0;
 	}
 	public void agregar(T elemento) {
 		if(!pertenece(elemento)) {
@@ -27,24 +29,40 @@ public class Conjunto<T> {
 	public int tamano() {
 		return elementos.size();
 	}
+	public boolean vacio() {
+		return elementos.size()==0;
+	}
 	
 	public void union (Conjunto newConjunto) {
-		T elemento;
+		T item;
 		for(int i=0; i< newConjunto.tamano(); i++) {
-			//elemento = newConjunto.dameUno();
-				//this.agregar(elemento);   //ya que agregar por definicion no perminte elementos repetidos por lo tanto no es necesarion comprobar que el elemento esta repetido
+			item = (T) newConjunto.dameElemento();
+				this.agregar(item);   //ya que agregar por definicion no perminte elementos repetidos por lo tanto no es necesarion comprobar que el elemento esta repetido
 		}
 		
 	}
-		public T dameUnElemento() {
+	public T dameElemento() {
+		T aux = null;
+		while(!vacio()) {
+			aux=elementos.get(actual);
+			return aux;
+		}
+		actual++;
+		if(actual==elementos.size()) {
+			actual = 0;
+		}
+		return aux;
+	}
+	public T dameUnElemento() {
+		T aux1=null;
 		for(int i = 0; i< elementos.size(); i++) {
 			if(!(auxiliar.contains(elementos.get(i)))) {
-				aux = elementos.get(i);
-			}
-			
+				aux1 = elementos.get(i);
 		}
-		auxiliar.add(aux);
-		return aux;
+			
+	}
+		auxiliar.add(aux1);
+		return aux1;
 		
 	}
 	public String mostrarElementos() {
