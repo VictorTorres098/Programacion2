@@ -36,7 +36,7 @@ public class Conjunto<T> {
 	public void union (Conjunto<T> newConjunto) {
 		T item;
 		for(int i=0; i < newConjunto.tamano(); i++) {
-			item = newConjunto.dameElemento();
+			item = newConjunto.dameUnElemento();
 				this.agregar(item);   //ya que agregar por definicion no perminte elementos repetidos por lo tanto no es necesarion comprobar que el elemento esta repetido
 		}
 		
