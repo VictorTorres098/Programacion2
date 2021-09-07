@@ -15,14 +15,14 @@ public class Main {
 		elementosB.agregar(54);
 		elementosB.agregar(14);
 		elementosB.agregar(124);
-		System.out.println(elementos.tamano());
+//		System.out.println(elementos.tamano());
+//		System.out.println(elementosB.tamano());
 		elementos.union(elementosB);
-		System.out.println(elementos.tamano());
-		System.out.println(elementos.mostrarElementos());
-//		while(elementos!=null) {
-//			System.out.println(elementos.dameElemento());
-//			System.out.println(elementos.dameUnElemento());
-//		}
+//		System.out.println(elementos.tamano());
+//		System.out.println(elementosB.tamano());
+		for(int i = 0; i < elementos.tamano(); i++) {
+			System.out.println(elementos.dameUnElemento());
+		}
 
 
 	}
