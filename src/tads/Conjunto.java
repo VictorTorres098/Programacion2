@@ -6,11 +6,13 @@ public class Conjunto<T> {
 	
 	private ArrayList<T> elementos;
 	private ArrayList<T> auxiliar;
+	private ArrayList<T> iterseccion;
 	private int actual;
 	
 	public Conjunto() {
 		this.elementos = new ArrayList<T>();
 		this.auxiliar = new ArrayList<T>();
+		this.iterseccion = new ArrayList<T>();
 		actual = 0;
 	}
 	public void agregar(T elemento) {
@@ -46,7 +48,7 @@ public class Conjunto<T> {
 		while(!vacio()) {
 			aux=elementos.get(actual);
 			return aux;
-		}
+		}										//mal funcionamiento
 		actual++;
 		if(actual==elementos.size()) {
 			actual = 0;
@@ -59,27 +61,25 @@ public class Conjunto<T> {
 			if(!(auxiliar.contains(elementos.get(i)))) {
 				aux1 = elementos.get(i);
 		}
-			
 	}
 		auxiliar.add(aux1);
 		return aux1;
-		
 	}
-	public String mostrarElementos() {
+	protected String mostrarElementos() {
 		String cadena = "";
 		for(int i = 0; i < elementos.size(); i++) {
 			cadena = cadena+" "+elementos.get(i);
 		}
 		return cadena;
 	}
-	public String mostrarAuxiliar() {
+	protected String mostrarAuxiliar() {
 		String cadenaAuxiliar = "";
 		for(int j = 0; j < auxiliar.size(); j++) {
 			cadenaAuxiliar = cadenaAuxiliar+" "+auxiliar.get(j); 
 		}
 		return cadenaAuxiliar;
 	}
-	public boolean estaEnAuxiliar(Integer valor) {
+	protected boolean estaEnAuxiliar(Integer valor) {
 		boolean enAuxiliar = false;
 		for(int i = 0; i<auxiliar.size(); i++) {
 			enAuxiliar = enAuxiliar || valor == auxiliar.get(i);
@@ -87,8 +87,25 @@ public class Conjunto<T> {
 		return enAuxiliar;
 	}
 	//union con crear un 3 Conjunto destrutiva
+	
 	//idea miesntras sea distinto de null
 	//interseccion que debe estar en ambos conjuntos
+	public void interseccion (Conjunto<T> conjunto) {
+		for(int i = 0; i < conjunto.tamano(); i++) {
+			T itemB = conjunto.dameElemento();
+			if(estaEnconjunto(itemB)) {
+				iterseccion.add(itemB);
+			}
+		}
+	}
+	
+	private boolean estaEnconjunto(T elemento) {
+		boolean esta = false;
+		for(int i = 0; i < elementos.size(); i++ ) {
+			esta = esta || elementos.contains(elemento);
+		}
+		return esta;
+	}
 }
 
 /**
