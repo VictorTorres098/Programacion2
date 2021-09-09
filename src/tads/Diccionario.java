@@ -1,3 +1,4 @@
+
 package tads;
 
 import java.util.LinkedList;
@@ -39,18 +40,57 @@ import java.util.LinkedList;
  * -quitar					= void quitar(C clave)
  * -buscarSignificado		= S buscarSignificado(C clave)
  * -vacio					= boolean vacio(){}
- * -cantidadElementos		= public int cantidadElementos() {}
+ * -tamano					= public int tamano() {}
  * -perteneceClave			= boolean perteneceClave(C clave)
- * -mostarTodo				= public String toString(){ } 
  */
 public class Diccionario<C,S> {
 	
 	private LinkedList<Tupla<C,S>> entradas;
+	private Conjunto<C> claves;
 	
 	public Diccionario() {
-		entradas = new LinkedList<Tupla<C,S>>(); 
+		entradas = new LinkedList<Tupla<C,S>>();
+		claves = new Conjunto<C>();
 	}
-	
+	public void agregar(C clave, S significado) {
+		if(!pertenece(clave)) {
+			entradas.add(new Tupla<>(clave, significado));
+			claves.agregar(clave);
+		}
+	}
+	public void quitar(C clave) {
+		if(pertenece(clave)) {
+			entradas.remove(clave);
+		}
+	}
+	public boolean pertenece(C clave) {
+		return claves.pertenece(clave);
+	}
+	public S buscarSignificado(C clave) {
+		S significadoAux = null;
+		if(pertenece(clave)) {
+			Tupla<C,S> aux = buscarItem(clave);		//creo una tupla auxiliar para que tome el valor del elemento con la clave dada
+			significadoAux = aux.getY();
+		}
+		return significadoAux;
+	}
+	public int tamano() {
+		return entradas.size();
+	}
+	public boolean vacio() {
+		return entradas.isEmpty(); 					// Es lo mismo que entradas.size()==0;
+	}
+	private Tupla<C,S> buscarItem(C clave){
+		for(int i = 0; i < tamano(); i++) {
+			if(entradas.get(i).getX().equals(clave)) {
+				return entradas.get(i);
+			}
+		}
+		return null;
+	}
+	private Conjunto<C> obtenerClaves(){
+		return claves;
+	}
 	
 
 }
