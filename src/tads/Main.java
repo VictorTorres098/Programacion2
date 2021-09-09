@@ -26,9 +26,16 @@ public class Main {
 		//deberia imprimir unicamente el item 3 ya que es el unico que se repite
 		elementos.interseccionB(elementosB);
 		
-		for(int i = 0; i < elementos.tamano(); i++) {
-			System.out.println(elementos.dameUnElemento());
-		}
+//		for(int i = 0; i < elementos.tamano(); i++) {
+//			System.out.println(elementos.dameUnElemento());
+//		}
+		
+		/////////////////////////////////////////////DICCIONARIO//////////////////////////////////////////////////
+		Diccionario test = new Diccionario();
+		test.agregar(1, "uno");
+		test.agregar(2, "dos");
+//		System.out.println(test.buscarSignificado(1));
+		
 
 
 	}
