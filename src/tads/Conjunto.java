@@ -90,21 +90,37 @@ public class Conjunto<T> {
 	
 	//idea miesntras sea distinto de null
 	//interseccion que debe estar en ambos conjuntos
+	//como remplazar el conjunto "elementos" para que que tenga los elementos de auxiliar 
+	//la interseccion son los elemetos que pertenecen a los dos conjunto
+	//esto significa que tengo que eliminar los elementos del conjunto principal que no pertenezcan al segundo conjunto
+	//simplificando: si algun item del conjunto principal no pertenece en el conjunto dado lo elimino!
+	//VER 0.1 
 	public void interseccion (Conjunto<T> conjunto) {
+		T itemA=null;
 		for(int i = 0; i < conjunto.tamano(); i++) {
-			T itemB = conjunto.dameElemento();
-			if(estaEnconjunto(itemB)) {
-				iterseccion.add(itemB);
+				itemA = conjunto.dameElemento();
+			if(!(estaEnconjuntoPrincipal(itemA))) {
+				elementos.remove(itemA);
 			}
 		}
 	}
-	
-	private boolean estaEnconjunto(T elemento) {
+	private boolean estaEnconjuntoPrincipal(T elemento) {
 		boolean esta = false;
 		for(int i = 0; i < elementos.size(); i++ ) {
 			esta = esta || elementos.contains(elemento);
 		}
 		return esta;
+	}
+	//VER 0.2
+	public void interseccionB (Conjunto<T> conjunto) {
+		T itemB = null;
+		for(int i = 0; i < elementos.size(); i++ ) {
+			itemB = elementos.get(i);
+			if(!(conjunto.pertenece(itemB))) {
+				elementos.remove(itemB);
+			}
+		}
+		
 	}
 }
 
