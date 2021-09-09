@@ -1,0 +1,10 @@
+Estructuras de datos:
+Array es eficiente para acceder a un elemento si y solo si conozco la posicion del elemento es estatico!
+Lista egregar o sacar un item en cualquier posicion es dinamico!
+Conjunto solo me garantiza que no hay elementos repetidos no es muy eficiente
+Diccionario Dependiendo de la implementacion puedo acceder a un elemento eficientemente, hashtable es el mas eficiente en esto!! cada elemento se genere un hashCode unico esto permite que encontrar un elemento se de complejidad O(1) resumidiamente.
+Arraylist tienen el comportamiento de array pero es dinamico esto no quiere decie que es eficiente
+LinkedList tiene un nodo por elemento, esto conmbiene para agregar y quitar elementos
+
+Si en elgun ejercicio me piden que sea orden 1 necesariamente tengo que usar el HashCode
+En caso de implementar algo con linkedlist y me piden que sea algo de orden 1 una solucion para esto es se podria compiar los elementos de linkedlist a un hashcode 
