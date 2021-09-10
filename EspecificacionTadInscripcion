@@ -1,0 +1,73 @@
+Se desea crear un sistema de incripcion a materias de los alumnos de la universidad, para lo que se quiere cumplir con los 
+siguientes requerimientos:
+
+*En el sistema se debe poder ingresar nuevos alumnos, los datos que se registran son numeros de libretas, nombre apellidos.
+*Los alumnos se inscriben indicando su numero de libreta, la materia, y la comision.
+Deben estar ya ingresados en el sistema. No hay limites en catidad de materias inscriptas y no hay cupos para las comisiones.
+(las materias y comisiones estan cargadas previamentes)
+*Las materias se identifican con su nombre (string) y sus comisiones por un codigo (String)
+*El sistema debe permitir obtener en que comision esta inscripto un alumno. Para esto es necesario indicar la materia que se desea
+consultar y la libreta 
+*Se puede solicitar un cambio de comision, indicando el nro de libreta, la materia y la nueva comision 
+
+Es necesario obtener la cantidad de alumnos que estan inscriptos en mas de 4 materias. No se debe permitir que un alumno
+se inscriba en dos comisiones de la misma materia.
+un alumno haga un cambio de comision para una materia en la que no esta inscripto.
+
+Se pide:
+1) dar una especificacion del TAD sistema inscripcion(con todos los tads que lo componen)
+implementar usando la es estructuras de datos adecuadas 
+escribir el IREP de cada TAD
+
+2) ahora se pide obeter la comision debe resolverse en 0(1)¿como modificaria lo hecho en el punto 2 si es que no fue implementado 
+de esa manera? explique. Si cambian o se agregan estructuras de datos, escriba las nuevas a utilizar
+
+Para implementar el sistema de incripcion son necesarios los siguientes TADs:
+
+InscripcionMaterias
+Alumnos 
+Materia 
+
+Cada una de estos TADs tienen la siguinte especificacion:
+
+InscripcionMaterias:
+
+-coleccion de Alumnos
+-materias exitentes 
+-El Conjunto es dinamico
+
+Datos:
+lista de Alumnos 
+lista de materias
+
+Acciones:
+Ingresar 
+Inscribirse
+AgregarMateria???????
+ObetenerComision
+CambioDeComision  //alumnos
+SolicitudInscripciones
+
+IREP:
+No se permite inscribir un mismo alumno dos veces
+No se permite anotar a una alumno dos comisiones de una misma materia
+Para inscribirse los alumnos ya deben estar cargados en el sistema
+
+Interface:
+public void ingresar(Integer nmrLibreta, String nombre, String apellido)
+public void inscribirse(Integer nmrLibreta, String materia, String comision)
+public String obetenerComision (Integer nmrLibreta, String materia)
+public void cambioDeComision (Integer nmrLibreta, String materia, String comision)
+public int solicitudInscripciones()
+
+Alumnos:
+ 
+
+
+
+
+
+
+
+
+

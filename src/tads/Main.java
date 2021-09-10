@@ -17,6 +17,7 @@ public class Main {
 		elementosB.agregar(3);
 		elementosB.agregar(15);
 		elementosB.agregar(6);
+		
 //		System.out.println(elementos.tamano());
 //		System.out.println(elementosB.tamano());
 //		elementos.union(elementosB);
