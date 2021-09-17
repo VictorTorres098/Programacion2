@@ -1,18 +1,18 @@
 package inscripcionMaterias;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Alumno {
 	private Integer nroLibreta;
 	private String nombre;
 	private String apellido;
-	private ArrayList<Materia> materias;
+	private HashMap<String, String> materias;
 	
 	public Alumno(Integer nroLibreta, String nombre, String apellido) {
 		this.nroLibreta = nroLibreta;
 		this.nombre = nombre;
 		this.apellido = apellido;
-		this.materias = new ArrayList<Materia>();
+		this.materias = new HashMap<>();
 	}
 	public Integer getNroLibreta() {
 		return nroLibreta;
@@ -24,29 +24,23 @@ public class Alumno {
 		return apellido;
 	}
 	public void agregarMateria(String materia, String comision) {
-		materias.add(new Materia(materia,comision));
+		if(!(materiaYaIngresada(materia))) {
+			materias.put(materia, comision);
+		}
+	}
+	public boolean materiaYaIngresada(String materia) {
+		return materias.containsKey(materia);
 	}
 	public String comision(String materia) {
 		String com = "";
-		for(int i = 0; i < materias.size(); i++) {
-			if(materias.get(i).getMateria().equals(materia)) {
-				com = materias.get(i).getComision();
-			}
-		}
+		com = materias.get(materia);
 		return com;
 	}
-	public boolean exiteMateria(String materia) {
-		boolean exite = false;
-		for(int i = 0; i < materias.size(); i++) {
-			exite = exite || materias.get(i).getMateria().equals(materia);
-		}
-		return exite;
-	}
 	public void modificarCom(String materia, String com) {
-		for(int i = 0; i < materias.size(); i++) {
-			if(materias.get(i).getMateria().equals(materia)) {
-				materias.get(i).setComision(com);
-			}
+		if(materiaYaIngresada(materia)) {
+			materias.put(materia, com);
+		}else {
+			throw new RuntimeException("No esta inscripto a materia");
 		}
 	}
 	public int cantidadDeMaterias() {

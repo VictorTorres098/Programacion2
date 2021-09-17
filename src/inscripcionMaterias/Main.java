@@ -29,6 +29,11 @@ public class Main {
 		nuevoTrimestre.inscribirse(3, "sor", "com2");
 		nuevoTrimestre.inscribirse(3, "ORGA", "com2");
 		System.out.println(nuevoTrimestre.cantAlumnosInscriptosConMas4());
+		System.out.println(nuevoTrimestre.obtenercomision(3, "sor"));
+		Alumno alumno = new Alumno(4, "V", "Spar");
+		alumno.agregarMateria("mat", "com2");
+		System.out.println(alumno.comision("mat"));
+		nuevoTrimestre.cambioDeComision(3, "test", "com3");
 	}
 
 }
