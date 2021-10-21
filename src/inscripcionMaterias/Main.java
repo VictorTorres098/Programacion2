@@ -9,6 +9,7 @@ public class Main {
 		HashMap<String, String[]> dicc = new HashMap<String, String[]>();
 		HashMap x = new HashMap();
 		dicc.put("matemica",arrayString);
+		dicc.containsKey(x);
 		//System.out.println(dicc.get("matemica")[1]);
 		InscripcionMaterias nuevoTrimestre = new InscripcionMaterias();
 		nuevoTrimestre.ingresar(1, "fulanito", "menganito");
